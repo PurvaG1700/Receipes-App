@@ -9,6 +9,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  
 
   MealItem({
     @required this.title,
@@ -17,6 +18,7 @@ class MealItem extends StatelessWidget {
     @required this.complexity,
     @required this.duration,
     @required this.imageUrl,
+    
   });
 
   String get complexityTest {
@@ -53,6 +55,13 @@ class MealItem extends StatelessWidget {
 
   void selectMeal(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(MealDetailScreen.routeName, arguments: id);
+    
+    // .then(
+    //     (value) {
+    //       if(value!=null){
+    //         removeItem(value);
+    //       }
+    //     }); //then is executes when the page is popped and not after the page is rendered. It takes the value passed from the pop of the page rendered in the then section
   }
 
   @override
